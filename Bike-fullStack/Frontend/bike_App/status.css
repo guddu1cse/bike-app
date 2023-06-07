@@ -1,0 +1,67 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    background-color: rgb(169, 197, 221);
+    background-image: url(https://cdn.vectorstock.com/i/1000x1000/58/90/bicycle-repair-workshop-logo-template-vector-13455890.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.status{
+    justify-content: center;
+    padding-top: 10%;
+    margin-left: 30%;
+}
+
+button{
+    position:relative;
+    background-color: bisque;
+    border-color: aliceblue;
+    border-style: double;
+    border-radius: 5px;
+    width: 90px;
+    height: 30px;
+    margin-top: 3%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: 0.5s;
+}
+
+button:hover{
+
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+}
+
+
+.input{
+    background-color: rgba(187, 198, 195, 0.473);
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    border-radius: 5px;
+   
+}
+
+.input:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    transition: 0.5s;
+}
+input:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    transition: 0.5s;
+}
+
+input{
+    height: 30px;
+    width: 60%;
+    border-radius: 5px;
+    border-style: double;
+    border-color: aliceblue;
+    padding: 3px;
+}
+

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="booking.css">
+    <script src="https://kit.fontawesome.com/53406703a7.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body> 
+    <nav class="navbar">
+
+    </nav>
+ 
+    
+    <div class="form" id="form">
+        <h3>Fill Booking Datails: </h3>
+        <br>
+
+        <div class="input">
+            <label>Name:</label>
+            <br>
+            <input type="text" placeholder="Name" id="name">
+        </div>
+
+        <div class="input">
+            <label>Mobile Number:</label>
+            <br>
+            <input type="text" placeholder="+91999999999" id="mobile">
+        </div>
+
+        <div class="input">
+            <label>Bike No:</label>
+            <br>
+            <input type="text" placeholder="BR-01A-3445" id="bikeNo">
+        </div>
+
+        <div class="input">
+            <label>Bike Brand:</label>
+            <br>
+            <input type="text" placeholder="ex:yamaha" id="brand">
+        </div>
+
+        <div class="input">
+            <label>Model Number:</label>
+            <br>
+            <input type="text" placeholder="Ex: R15" id="modelNo">
+        </div>
+
+        <div class="input">
+            <label>Date Of Booking:</label>
+            <br>
+            <input type="date" placeholder="date" id="date">
+        </div>
+        <div class="input">
+            <label>Description:</label>
+            <br>
+            <input type="textarea" placeholder="description" id="description">
+        </div>
+
+        <button onclick="get()">Submit</button>
+
+    
+    <script>
+        console.log("hello");
+        
+        function get(){
+            console.log("clicked on submit");
+
+
+            var name=document.getElementById("name").value;
+            var mobile=document.getElementById("mobile").value;
+            var brand=document.getElementById("brand").value;
+            var bikeNo=document.getElementById("bikeNo").value;
+            var modelNo=document.getElementById("modelNo").value;
+            var date=document.getElementById("date").value;
+            var description=document.getElementById("description").value;
+
+            console.log(name);
+            console.log(mobile);
+            console.log(bikeNo);
+            console.log(brand);
+            console.log(modelNo);
+            console.log(date);
+            console.log(description);
+
+        fetch("http://localhost:7070/bike", {
+            method: "POST",
+            body: JSON.stringify({
+                ownName: name,
+                mobile: mobile,
+                bikeNo: bikeNo,
+                brand: brand,
+                model: modelNo,
+                dateOfAppointment: date,
+                description:description
+            }),
+            headers: {
+            "Content-type": "application/json; charset=UTF-8"
+            }
+        })
+        .then((response) => {
+            response.json();
+            showTost(successMsg);
+        })
+        .then((json) => {
+            console.log(json);
+        })
+        .catch(error =>{
+            showTost(errorMsg);
+        })
+
+
+        let markup=document.querySelector('#form').innerHTML='<h2>Booking successfully !!</h2>'
+        
+
+        }
+
+        let successMsg='<i class="fa-solid fa fa-check"></i> Booking successfully !!';
+        let errorMsg='<i class="fa-solid fa-xmark"></i> Somethings went wrong try agin laye !!';
+        
+
+        let tostBox=document.getElementById('form');
+
+        function showTost(msg){
+            let toast = document.createElement('div');
+            toast.classList.add('toast');
+            toast.innerHTML=msg;
+            tostBox.appendChild(toast);
+
+            if(msg.includes('wrong')){
+                toast.classList.add('wrong');
+            }
+            if(msg.includes('success')){
+                toast.classList.add('success');
+            }
+
+            setTimeout(()=>{
+                toast.remove();
+            } , 4000)
+        }
+
+        
+        
+    </script>
+
+    <script src="nav.js"></script>
+
+    </div>
+
+</body>
+</html>

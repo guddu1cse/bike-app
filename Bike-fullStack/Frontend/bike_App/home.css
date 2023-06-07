@@ -1,0 +1,25 @@
+
+body{
+    background-size: cover;
+}
+
+.content{
+    font-size:xx-large;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(227, 225, 222);
+    text-shadow: 1px 6px 5px rgba(173, 156, 166, 0.99),15px 7px 7px rgba(136, 223, 146, 0.523);
+}
+
+.container{
+    margin-top: 2%;
+    margin-left: 13%;
+    background-image:url(https://www.google.co.in/maps/@23.2454418,77.4587127,15z);
+    margin-bottom: 2%;
+}
+
+img{
+    margin-left: 2%;
+    border-radius: 20px;
+    width: 80%;
+    height: 40%;
+}

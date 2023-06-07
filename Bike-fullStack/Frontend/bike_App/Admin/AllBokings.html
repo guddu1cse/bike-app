@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="AllBokings.css">
+    <title>All Bokings</title>
+</head>
+<body>
+
+    <nav class="navbar">
+    </nav>
+
+       <h1 id="records"></h1>
+    <div class="tableData" id="tableData">
+
+        <script>
+            let dataList = document.getElementById('h3');
+            
+            fetch("http://localhost:7070/bike")
+            .then(res => res.json())
+            .then(data =>{
+                
+                console.log(data.length);
+                data.map((value)=>{
+                    let record=`
+                    <div class="data">
+                        <div class="name li"><h3><i class="fa-solid fa fa-user"></i> ${value.ownName}</h3></div>
+                        <div class="mobile li"><h4><i class="fa-solid fa-motorcycle"></i> ${value.bikeNo}</h4></div>
+                        <div class="bikeNo li"><h6><i class="fa-solid fa-phone"></i> ${value.mobile}</h6></div>
+                        <div class="bikeNo li"><h5>Issue: ${value.description}</h5></div>
+                        <div class="bikeNo li"><h5>Date Of Delivered: ${value.dateOfAppointment}3</h5></div>
+                    </div>
+                    `;
+                    document.getElementById('tableData').innerHTML+=record;
+                })
+            })
+            .catch(error =>{
+                document.getElementById('tableData').innerHTML='<img class="error" src="how-to-fix-error-404-1.webp" alt="">';
+            });
+
+        </script>
+    </div>
+    <div class="list" id="list"></div>
+
+
+
+    <script src="nav.js"></script>
+    <script src="https://kit.fontawesome.com/53406703a7.js" crossorigin="anonymous"></script>
+    
+</body>
+    
+
+</html>

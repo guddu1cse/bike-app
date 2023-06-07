@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="status.css">
+    <title>Status</title>
+</head>
+<body>
+    <nav class="navbar"> </nav>
+ 
+    <div class="status">
+        <div class="input" id="input">
+            <h3>Check Bike Status: </h3>
+            <br>
+            <label>Enter Bike Number:</label>
+            <br>
+            <input type="text" id="bikeNo" placeholder="EX:BR-01A-0001">
+            <button onclick="showStatus(document.getElementById('bikeNo').value)">Submit</button>
+        </div>
+        
+    </div>
+
+
+    <script src="nav.js"></script>
+    <script src="https://kit.fontawesome.com/53406703a7.js" crossorigin="anonymous"></script>
+    <script>
+        let mesg=document.getElementById('input');
+        
+
+        function showStatus(msg){
+            fetch("http://localhost:7070/bike/status/"+msg)
+            .then(res =>res.text())
+            .then(data =>{
+                mesg.innerHTML='<div><h3>'+data+'</h3></div>';
+                console.log(data);
+            })
+            .catch(error =>{
+                mesg.innerHTML='<div><h3>Somethings  wrong </h3></div>';
+                console.log(error);
+            })
+        }
+
+    </script>
+
+</body>
+</html>

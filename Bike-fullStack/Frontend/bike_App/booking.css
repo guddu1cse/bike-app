@@ -1,0 +1,122 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    
+    background-image: url(https://img.freepik.com/free-vector/male-mechanic-repairs-motorcycle-wheel-isolated-white-background-man-fixing-motorbike-repair-shop-garage-concept-motor-service-repair-maintenance-garage_575670-1889.jpg?w=826&t=st=1681983288~exp=1681983888~hmac=388e936a865e9a1abee1fc4c6f7c1e2a4bc07c744715a1b5c38510a02ec29284);
+    background-size: cover;
+    background-position: fixed;
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position-x: -100px;
+}
+
+.form{
+    height: 100vh;
+    width: 100vw;
+    margin-left: 43%;
+    width: 38%;
+    background-color: rgba(193, 166, 210, 0);
+    padding: 10%;
+    border-radius: 10px;
+}
+
+input{
+    height: 30px;
+    width: 65%;
+    margin-left: 10%;
+    border-radius: 10px;
+    border-color: rgba(202, 155, 84, 0.616);
+    border-style:double;
+    padding: 5px;
+}
+
+
+
+label{
+    margin: 5px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 5px;
+}
+
+button{
+    margin-left: 25%;
+    height: 40px;
+    width: 40%;
+    margin-top: 20px;
+    border-radius: 5px;
+    border-color: black;
+    font-family:Arial, Helvetica, sans-serif
+}
+
+button:hover{
+    
+    transition: 0.3s;
+    background-color: rgb(192, 203, 178);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+}
+
+.toast{
+    width: 400px;
+    height: 80px;
+    background: #fff;
+    font-weight: 500;
+    margin: 15px 0px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    position: relative;
+    transform: translate(100%);
+    animation:moveleft 0.3s linear forwards;
+}
+
+@keyframes moveleft {
+    100%{
+        transform: translateX(0);
+    }
+}
+
+.toast i{
+    margin: 0 20px;
+    font-size: 35px;
+    color: green;
+}
+
+.toast.wrong i{
+    color: red;
+}
+
+.toast.success i{
+    color: green;
+}
+
+.toast::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom:0;
+    width: 100%;
+    width: 1;
+    height: 5px;
+    background: green;
+    animation: anim 4s linear forwards;
+}
+
+@keyframes anim{
+    100%{
+        width: 0;
+    }
+}
+
+.toast.wrong::after{
+    background-color: red;
+}
+.toast.success::after{
+    background-color: green;
+}
+input:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
